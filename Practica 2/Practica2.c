@@ -105,7 +105,7 @@ int menu() //definicion de la funcion "menu"
 		scanf("%d", &op); //llamar a la funcion "scanf"
 		if (op < 1 || op > 10) //sentencia condicional
 		{
-			//printf("Opci�n no v�lida\n")
+			//printf("Opción no válida\n");
 			printf("Opci%cn no v%clida\n"), 0xA2, 0xA0;
 			system("pause"); //detenerse hasta pulsar una tecla
 		}
@@ -113,4 +113,11 @@ int menu() //definicion de la funcion "menu"
 	while (op < 1 || op > 10); //condicion
 	
 	return op;
+}
+
+int desplazar(int n, int nPos)
+{
+	int nDesplazado;
+
+	return nDesplazado;
 }
