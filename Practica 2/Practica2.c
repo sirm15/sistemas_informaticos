@@ -5,12 +5,13 @@
 
 //DECLARACIONES DE FUNCIONES
 int menu(); //declaracion de la funcion menu
+int desplazar();
 
 int main()
 {
 	//DEFINICIONES DE VARIABLES
 	int opcion; //opcion elegida del menu
-
+	int x, y, z;
 	printf("PRACTICA 2 \n");
 	printf("===========\n");
 	opcion = menu(); //llama/invoca a la funcion menu
@@ -22,7 +23,12 @@ int main()
 		case 1:
 			printf("Ejercicio 1: desplazar\n"); //llama a la funcion printf
 			//llamar a la funcion "desplazar"
-
+			printf("Introduzca el numero que quiera desplazar a la derecha: \n");
+			scanf("%d", &x);
+			printf("Introduzca el numero de posiciones a desplazar: \n");
+			scanf("%d", &y);
+			z = desplazar(x, y);
+			printf("El resultado es: %d \n", z);
 			break;
 
 		case 2:
@@ -118,6 +124,6 @@ int menu() //definicion de la funcion "menu"
 int desplazar(int n, int nPos)
 {
 	int nDesplazado;
-
+	nDesplazado = n >> nPos;
 	return nDesplazado;
 }
