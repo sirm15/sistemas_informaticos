@@ -1,5 +1,5 @@
 ﻿  Practica2.c
-c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(115): warning C4473: "printf": no se pasaron suficientes argumentos para la cadena de formato
-  c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(115): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 0
-  c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(115): note: el argumento variádico 1 que falta es requerido por la cadena de formato '%c'
-  Practica 2.vcxproj -> C:\Users\Mario\Source\Repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
+c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(128): warning C4473: "printf": no se pasaron suficientes argumentos para la cadena de formato
+  c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(128): note: los marcadores de posición y sus parámetros esperan 2 argumentos variádicos, pero se proporcionaron 0
+  c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(128): note: el argumento variádico 1 que falta es requerido por la cadena de formato '%c'
+  Practica 2.vcxproj -> C:\Users\zarzu\Source\Repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
