@@ -13,7 +13,7 @@ int main()
 	//DEFINICIONES DE VARIABLES
 	int opcion; //opcion elegida del menu
 	int x=0, y=0, z=0;
-	int mod=0;
+	//int mod=0;
 	printf("PRACTICA 2 \n");         //no se imprime	
 	printf("===========\n");         //no se imprime
 	opcion = menu(); //llama/invoca a la funcion menu
@@ -38,8 +38,8 @@ int main()
 			//llamar a la funcion "parImpar"
 			printf("Introduzca el numero que quiera analizar: \n");
 			scanf("%d", &x);//guardo el numero a analizar en x
-			mod = ParImpar(x);//mod va a ser igual al valor que devuelva ParImpar cuando realice su trabajo con la variable x
-			mod==(0) ? printf("El numero introducido es par. \n") : printf("El numero introducido es impar. \n");
+			y = ParImpar(x);//y va a ser igual al valor que devuelva ParImpar cuando realice su trabajo con la variable x
+			y==(0) ? printf("El numero introducido es par. \n") : printf("El numero introducido es impar. \n");
 			/*if (mod==0)
 			{
 				printf("El numero introducido es par. \n");
@@ -145,5 +145,5 @@ int ParImpar(int n)//n va a ser igual a la variable x, que es con la que he indi
 {
 	int resto;//creo una nueva variable solo para esta funcion
 	resto = n % 2;//opero con las variables locales de la funcion ParImpar
-	return resto;//la funcion devuelve el valor de resto, que gracias a mod=ParImpar(x) se va a asignar a la variable mod de la funcion main
+	return resto;//la funcion devuelve el valor de resto, que gracias a y=ParImpar(x) se va a asignar a la variable y de la funcion main
 }
