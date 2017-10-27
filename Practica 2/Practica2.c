@@ -5,8 +5,8 @@
 
 //DECLARACIONES DE FUNCIONES
 int menu(); //declaracion de la funcion menu
-int desplazar();
-int ParImpar();
+int desplazar();//¿necesario poner int?
+int ParImpar();//""
 
 int main()
 {
