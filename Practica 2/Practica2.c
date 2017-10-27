@@ -6,14 +6,16 @@
 //DECLARACIONES DE FUNCIONES
 int menu(); //declaracion de la funcion menu
 int desplazar();
+int ParImpar();
 
 int main()
 {
 	//DEFINICIONES DE VARIABLES
 	int opcion; //opcion elegida del menu
-	int x, y, z;
-	printf("PRACTICA 2 \n");
-	printf("===========\n");
+	int x=0, y=0, z=0;
+	int mod=0;
+	printf("PRACTICA 2 \n");         //no se imprime	
+	printf("===========\n");         //no se imprime
 	opcion = menu(); //llama/invoca a la funcion menu
 
 	while (opcion !=10) //sentencia repetitiva
@@ -25,16 +27,27 @@ int main()
 			//llamar a la funcion "desplazar"
 			printf("Introduzca el numero que quiera desplazar a la derecha: \n");
 			scanf("%d", &x);
-			printf("Introduzca el numero de posiciones a desplazar: \n");
+			printf("Introduzca el numero de posiciones a desplazar: \n");//añadir el numero introducido en binario
 			scanf("%d", &y);
 			z = desplazar(x, y);
-			printf("El resultado es: %d \n", z);
+			printf("El resultado es: %d \n", z);//añadir el resultado en binario
 			break;
 
 		case 2:
 			printf("Ejercicio 2: par o impar\n");
 			//llamar a la funcion "parImpar"
-
+			printf("Introduzca el numero que quiera analizar: \n");
+			scanf("%d", &x);//guardo el numero a analizar en x
+			mod = ParImpar(x);//mod va a ser igual al valor que devuelva ParImpar cuando realice su trabajo con la variable x
+			mod==(0) ? printf("El numero introducido es par. \n") : printf("El numero introducido es impar. \n");
+			/*if (mod==0)
+			{
+				printf("El numero introducido es par. \n");
+			}
+			else
+			{
+				printf("El numero introducido es impar. \n");
+			}*/
 			break;
 
 		case 3:
@@ -126,4 +139,11 @@ int desplazar(int n, int nPos)
 	int nDesplazado;
 	nDesplazado = n >> nPos;
 	return nDesplazado;
+}
+
+int ParImpar(int n)//n va a ser igual a la variable x, que es con la que he indicado que se tiene que realizar la funcion
+{
+	int resto;//creo una nueva variable solo para esta funcion
+	resto = n % 2;//opero con las variables locales de la funcion ParImpar
+	return resto;//la funcion devuelve el valor de resto, que gracias a mod=ParImpar(x) se va a asignar a la variable mod de la funcion main
 }
