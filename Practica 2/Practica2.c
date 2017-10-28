@@ -7,6 +7,7 @@
 int menu(); //declaracion de la funcion menu
 int desplazar();//¿necesario poner int?
 int ParImpar();//""
+void operacionesLogicasBits();
 
 int main()
 {
@@ -53,7 +54,7 @@ int main()
 		case 3:
 			printf("Ejercicio 3: operaciones logicas y a nivel de bits\n");
 			//llamar a la funcion "operacionesLogicasBit"
-
+			operacionesLogicasBits();
 			break;
 
 		case 4:
@@ -147,3 +148,20 @@ int ParImpar(int n)//n va a ser igual a la variable x, que es con la que he indi
 	resto = n % 2;//opero con las variables locales de la funcion ParImpar
 	return resto;//la funcion devuelve el valor de resto, que gracias a y=ParImpar(x) se va a asignar a la variable y de la funcion main
 }
+
+void operacionesLogicasBits()
+{
+	int a = 8, b = 0, c = 15, d = 93, e, r1, r2, r3, r4, r5, r6;
+	r1 = a && b || c && !d;//0
+	r2 = !a || b && c || d;//1
+	r3 = a < b || !c > d;//0
+	r4 = a + b > d - c;//0
+	r5 = a && b && !c || !(a && b) && c;//1
+	a = 0x12; b = 0x56; c = 0x9a; d = 0x0f; e = 0360;
+	r1 = a & b | c;//154
+	r2 = c & 0177;//26
+	r3 = ~a | b ^ c;//-19
+	r4 = e & c;//144
+	r5 = r4 & ~077;//128
+	r6 = (a & d) << 4 | (a & e) >> 4;//33
+}
