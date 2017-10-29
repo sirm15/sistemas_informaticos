@@ -8,12 +8,15 @@ int menu(); //declaracion de la funcion menu
 int desplazar();//¿necesario poner int?
 int ParImpar();//""
 void operacionesLogicasBits();
+int ponerACeroBit();
+long factorial();
 
 int main()
 {
 	//DEFINICIONES DE VARIABLES
 	int opcion; //opcion elegida del menu
 	int x=0, y=0, z=0;
+	long factnum, factres;
 	//int mod=0;
 	printf("PRACTICA 2 \n");         //no se imprime	
 	printf("===========\n");         //no se imprime
@@ -21,7 +24,7 @@ int main()
 
 	while (opcion !=10) //sentencia repetitiva
 	{
-		switch (opcion) //sentencia condicional
+		switch (opcion) //sentencia condicionals
 		{
 		case 1:
 			printf("Ejercicio 1: desplazar\n"); //llama a la funcion printf
@@ -60,13 +63,28 @@ int main()
 		case 4:
 			printf("Ejercicio 4: poner a cero un bit\n");
 			//llamar a la funcion "ponerACeroBit"
-
+			printf("Introduzca un numero: \n");
+			scanf("%d", &x);
+			printf("Posicion del bit a poner a cero: \n");//añadir el numero introducido en binario
+			scanf("%d", &y);
+			z = ponerACeroBit(x, y);
+			printf("El numero resultante es: %d \n", z);//añadir el resultado en binario
 			break;
 
 		case 5:
 			printf("Ejercicio 5: factorial\n");
 			//llamar a la funcion Factorial
-
+			printf("Introduzca un numero: \n");
+			scanf("%ld", &factnum);
+			factres = factorial(factnum);
+			if (factres != -1)
+			{
+				printf("El factorial resultante es: %d \n", factres); //el ultimo factorial correcto es el de 12!
+			}
+			else
+			{
+				printf("No es posible calcular el factorial");
+			}
 			break;
 
 		case 6:
@@ -126,7 +144,7 @@ int menu() //definicion de la funcion "menu"
 		if (op < 1 || op > 10) //sentencia condicional
 		{
 			//printf("Opción no válida\n");
-			printf("Opci%cn no v%clida\n"), 0xA2, 0xA0;
+			printf("Opci%cn no v%clida\n", 0xA2, 0xA0);
 			system("pause"); //detenerse hasta pulsar una tecla
 		}
 	} 
@@ -160,8 +178,31 @@ void operacionesLogicasBits()
 	a = 0x12; b = 0x56; c = 0x9a; d = 0x0f; e = 0360;
 	r1 = a & b | c;//154
 	r2 = c & 0177;//26
-	r3 = ~a | b ^ c;//-19
+	r3 = ~a | b ^ c;//-19??-->101
 	r4 = e & c;//144
 	r5 = r4 & ~077;//128
 	r6 = (a & d) << 4 | (a & e) >> 4;//33
-}
+}
+
+int ponerACeroBit(int n, int nPosBit)
+{
+	int resultado, mascara;
+	mascara  = 1 << (nPosBit -1);		//tiene que ser menos uno porque sino pondrias a cero el bit siguente
+	mascara = ~mascara;					//a la posicion que has elegido, es decir, si eliges poner a cero el tercer
+	resultado = n & mascara;			//bit, y desplazas el uno en la mascara tres posiciones a la derecha estas
+	return resultado;					//modificando el 4 bit
+}
+
+long factorial(long n)
+{
+	long i = 0, factorial = 1;
+	if (n < 0 || n > 16) return -1;
+	else
+	{
+		for ( i = n; i > 1 ; i--)
+		{
+			factorial = factorial * i;
+		}
+	}
+	return factorial;
+}
