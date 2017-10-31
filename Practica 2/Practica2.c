@@ -2,6 +2,7 @@
 #define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 //DECLARACIONES DE FUNCIONES
 int menu(); //declaracion de la funcion menu
@@ -83,15 +84,27 @@ int main()
 			}
 			else
 			{
-				printf("No es posible calcular el factorial");
+				printf("No es posible calcular el factorial.\n");
 			}
 			break;
 
 		case 6:
 			printf("Ejercicio 6: numero de bits\n");
 			//llamar a la funcion "numeroBits"
-
-			break;
+			six : printf("Introduce un numero: ");
+			scanf("%d", &x);
+			z = numeroBits(x);
+			if (z != -1)
+			{
+				printf("Se necesitan %d bits para representar el numero %d en binario.\n", z, x);
+				break;
+			}
+			else
+			{
+				printf("Introduce un numero entero positivo.\n");
+				goto six;
+			}
+			
 
 		case 7:
 			printf("Ejercicio 7: cambiar bits\n");
@@ -205,4 +218,25 @@ long factorial(long n)
 		}
 	}
 	return factorial;
+}
+
+int numeroBits(int n) {
+	int exp=0;
+	/*for (exp = 1; exp < 1000; exp++)
+	{
+		if (((pow(2, exp - 1)) < n || n < (pow(2, exp))))
+		{
+			return exp;
+		}	
+	}
+	*/
+	if (n < 0) return -1;
+	else
+	{
+		while (pow(2, exp) <= n)
+		{
+			exp++;
+		}
+		return exp;
+	}
 }
