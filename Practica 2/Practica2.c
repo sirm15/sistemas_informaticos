@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+double numx, numy;
+
 //DECLARACIONES DE FUNCIONES
 int menu(); //declaracion de la funcion menu
 int desplazar();//¿necesario poner int?
@@ -11,13 +13,15 @@ int ParImpar();//""
 void operacionesLogicasBits();
 int ponerACeroBit();
 long factorial();
+int cambiarBit();
 
 int main()
 {
 	//DEFINICIONES DE VARIABLES
 	int opcion; //opcion elegida del menu
-	int x=0, y=0, z=0;
+	int x=0, y=0, z=0, i=0;
 	long factnum, factres;
+	double cambiados;
 	//int mod=0;
 	printf("PRACTICA 2 \n");         //no se imprime	
 	printf("===========\n");         //no se imprime
@@ -109,13 +113,33 @@ int main()
 		case 7:
 			printf("Ejercicio 7: cambiar bits\n");
 			// Llamar a la funci�n "cambiarBits"
-
+			seven : printf("Introduzca un numero: \n");
+			scanf("%d", &x);
+			printf("Posicion a partir de la cual quiere invertir los bits. \n");
+			scanf("%d", &y);
+			printf("¿Cuantos bits quiere modificar a partir de la posicion %d ?\n",y);
+			scanf("%d", &z);
+			i = cambiarBit(x, y, z);
+			if (i != -1)
+			{
+				printf("El numero resultante es %d", i);
+			}
+			else
+			{
+				printf("Numero de bits no valido.\n");
+				goto seven;
+			}
 			break;
 
 		case 8:
 			printf("Ejercicio 8: intercambiar\n");
 			// Llamar a la funci�n "intercambiar"
-
+			printf("Introduzca variable x: \n");
+			scanf("%lf", &numx);
+			printf("Introduzca variable y: \n");
+			scanf("%lf", &numy);
+			intercambiar();
+			printf("Valores intercambiados: Primero: %lf. Segundo: %lf.\n", numx, numy);
 			break;
 
 		case 9:
@@ -239,4 +263,26 @@ int numeroBits(int n) {
 		}
 		return exp;
 	}
+}
+
+cambiarBit(int numero, int posInicial, int nBits) {
+	int respuesta;
+	if (posInicial < 0 || nBits < 0 || nBits > posInicial)
+	{
+		return -1;
+	}
+	else
+	{
+
+	}
+}
+
+
+
+
+intercambiar() {
+	double numz;
+	numz = numx;
+	numx = numy;
+	numy = numz;
 }

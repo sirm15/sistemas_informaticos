@@ -1,3 +1,8 @@
 ﻿  Practica2.c
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(96): warning C4013: 'numeroBits' sin definir; se supone que extern devuelve como resultado int
-  Practica 2.vcxproj -> C:\Users\zarzu\source\repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(100): warning C4013: 'numeroBits' sin definir; se supone que extern devuelve como resultado int
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(141): warning C4013: 'intercambiar' sin definir; se supone que extern devuelve como resultado int
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(24): warning C4101: 'cambiados': variable local sin referencia
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(269): warning C4101: 'respuesta': variable local sin referencia
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(288): warning C4716: 'intercambiar': debe devolver un valor
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(278): warning C4715: 'cambiarBit': no todas las rutas de acceso de control devuelven un valor
+  Practica 2.vcxproj -> C:\Users\Mario\Source\Repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
