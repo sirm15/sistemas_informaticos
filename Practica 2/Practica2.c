@@ -14,6 +14,7 @@ void operacionesLogicasBits();
 int ponerACeroBit();
 long factorial();
 int cambiarBit();
+double mediaAritmetica();
 
 int main()
 {
@@ -22,6 +23,7 @@ int main()
 	int x=0, y=0, z=0, i=0;
 	long factnum, factres;
 	double cambiados;
+	double num1 = 0, num2 = 0, num3 = 0, num4 = 0, res;
 	//int mod=0;
 	printf("PRACTICA 2 \n");         //no se imprime	
 	printf("===========\n");         //no se imprime
@@ -106,28 +108,32 @@ int main()
 			else
 			{
 				printf("Introduce un numero entero positivo.\n");
-				goto six;
+				goto six;  //goto para permitir volver a elegir numero sin volver a elegir caso en el menu
 			}
 			
 
 		case 7:
 			printf("Ejercicio 7: cambiar bits\n");
 			// Llamar a la funci�n "cambiarBits"
-			seven : printf("Introduzca un numero: \n");
+			seven : printf("Introduzca un numero entero positivo: \n");
 			scanf("%d", &x);
+			if (x < 0)
+			{
+				goto seven;
+			}
 			printf("Posicion a partir de la cual quiere invertir los bits. \n");
 			scanf("%d", &y);
-			printf("¿Cuantos bits quiere modificar a partir de la posicion %d ?\n",y);
+			printf("¿ Cuantos bits quiere modificar a partir de la posicion %d ?\n",y);
 			scanf("%d", &z);
 			i = cambiarBit(x, y, z);
 			if (i != -1)
 			{
-				printf("El numero resultante es %d", i);
+				printf("El numero resultante es %d\n", i);
 			}
 			else
 			{
-				printf("Numero de bits no valido.\n");
-				goto seven;
+				printf("ERROR. Vuelva a comenzar.\n");
+				goto seven;  //goto para permitir volver a elegir numero sin volver a elegir caso en el menu
 			}
 			break;
 
@@ -145,7 +151,15 @@ int main()
 		case 9:
 			printf("Ejercicio 9: media aritmetica\n");
 			// Llamar a la funci�n "mediaAritmetica"
-
+			printf("Introduzca el primer numero:\n");
+			scanf("%ld", &num1);
+			printf("Introduzca el segundo numero:\n");
+			scanf("%ld", &num2);
+			printf("Introduzca el tercer numero:\n");
+			scanf("%ld", &num3);
+			printf("Introduzca el cuarto numero:\n");
+			scanf("%ld", &num4);
+			res = mediaAritmetica(num1, num2, num3, num4);
 			break;
 
 		default:
@@ -227,7 +241,7 @@ int ponerACeroBit(int n, int nPosBit)
 	mascara  = 1 << (nPosBit -1);		//tiene que ser menos uno porque sino pondrias a cero el bit siguente
 	mascara = ~mascara;					//a la posicion que has elegido, es decir, si eliges poner a cero el tercer
 	resultado = n & mascara;			//bit, y desplazas el uno en la mascara tres posiciones a la derecha estas
-	return resultado;					//modificando el 4 bit
+	return resultado;					//modificando el 4 bit //A NO SER QUE EL PRIMER BIT SEA 0 Y NO 1//
 }
 
 long factorial(long n)
@@ -265,20 +279,35 @@ int numeroBits(int n) {
 	}
 }
 
-cambiarBit(int numero, int posInicial, int nBits) {
-	int respuesta;
-	if (posInicial < 0 || nBits < 0 || nBits > posInicial)
+int cambiarBit(int numero, int posInicial, int nBits) {
+	int respuesta, mascara = 0/*, a = posInicial*/;
+	if (posInicial < 0 || nBits <= 0 || nBits > posInicial)
 	{
 		return -1;
 	}
 	else
-	{
+	{	
+		/*for (a = posInicial; nBits; a--)
+		{
+			mascara = mascara | (1 << a);
+		}*/
 
+		while (nBits != 0)
+		{
+			mascara = mascara | (1 << posInicial);
+			posInicial--;
+			nBits--;
+		}
+
+		respuesta = numero ^ mascara;
+		return respuesta;
 	}
 }
 
+double mediaAritmetica(double numero1, double numero2, double numero3, double numero4)
+{
 
-
+}
 
 intercambiar() {
 	double numz;
