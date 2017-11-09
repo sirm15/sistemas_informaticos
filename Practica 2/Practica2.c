@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-double numx, numy;
+//double numx, numy;
 
 //DECLARACIONES DE FUNCIONES
 int menu(); //declaracion de la funcion menu
@@ -143,11 +143,11 @@ int main()
 			printf("Ejercicio 8: intercambiar\n"); //paso por referencia
 			// Llamar a la funci�n "intercambiar"
 			printf("Introduzca variable x: \n");
-			scanf("%lf", &numx);
+			scanf("%lf", &num1);
 			printf("Introduzca variable y: \n");
-			scanf("%lf", &numy);
-			intercambiar();
-			printf("Valores intercambiados: Primero: %lf. Segundo: %lf.\n", numx, numy);
+			scanf("%lf", &num2);
+			intercambiar(&num1, &num2);
+			printf("Valores intercambiados: Primero: %lf. Segundo: %lf.\n", num1, num2);
 			break;
 
 		case 9:
@@ -296,7 +296,7 @@ int cambiarBit(int numero, int posInicial, int nBits) {
 }
 
 
-intercambiar() {
+intercambiar(double *num1, double *num2) {
 	/*double numz;
 	numz = numx;
 	numx = numy;
@@ -304,6 +304,10 @@ intercambiar() {
 	HAY QUE HACERLO MEDIANTE PASO DE REFERENCIAS, UTILIZANDO LA DIRECCION DE LA CELDA DE MEMORIA QUE ALMACENA EL VALOR
 	POR LO TANTO NO HAY QUE OPERAR CON VARIABLES GLOBALES, SINO CON LAS DIRECCIONES DE LAS VARIABLES LOCALES DECLARADAS EN EL MAIN
 	*/
+	double q;
+	q = *num1;
+	*num1 = *num2;
+	*num2 = q;
 }
 double mediaAritmetica(double numero1, double numero2, double numero3, double numero4)
 {
