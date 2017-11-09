@@ -8,13 +8,15 @@ double numx, numy;
 
 //DECLARACIONES DE FUNCIONES
 int menu(); //declaracion de la funcion menu
-int desplazar();//¿necesario poner int?
-int ParImpar();//""
+int desplazar(int, int);
+int ParImpar(int);
 void operacionesLogicasBits();
-int ponerACeroBit();
-long factorial();
-int cambiarBit();
-double mediaAritmetica();
+int ponerACeroBit(int, int);
+long factorial(long);
+int numeroBits(int);
+int cambiarBit(int, int, int);
+int intercambiar();
+double mediaAritmetica(double, double, double, double);
 
 int main()
 {
@@ -23,10 +25,10 @@ int main()
 	int x=0, y=0, z=0, i=0;
 	long factnum, factres;
 	double cambiados;
-	double num1 = 0, num2 = 0, num3 = 0, num4 = 0, res;
+	double num1 = 0, num2 = 0, num3 = 0, num4 = 0, res = 0;
 	//int mod=0;
-	printf("PRACTICA 2 \n");         //no se imprime	
-	printf("===========\n");         //no se imprime
+	printf("PRACTICA 2 \n");         //no se imprime porque hay un cls en la funcion menu	
+	printf("===========\n");         //no se imprime porque hay un cls en la funcion menu
 	opcion = menu(); //llama/invoca a la funcion menu
 
 	while (opcion !=10) //sentencia repetitiva
@@ -51,14 +53,6 @@ int main()
 			scanf("%d", &x);//guardo el numero a analizar en x
 			y = ParImpar(x);//y va a ser igual al valor que devuelva ParImpar cuando realice su trabajo con la variable x
 			y==(0) ? printf("El numero introducido es par. \n") : printf("El numero introducido es impar. \n");
-			/*if (mod==0)
-			{
-				printf("El numero introducido es par. \n");
-			}
-			else
-			{
-				printf("El numero introducido es impar. \n");
-			}*/
 			break;
 
 		case 3:
@@ -86,7 +80,7 @@ int main()
 			factres = factorial(factnum);
 			if (factres != -1)
 			{
-				printf("El factorial resultante es: %d \n", factres); //el ultimo factorial correcto es el de 12!
+				printf("El factorial resultante es: %d \n", factres); //el ultimo factorial correcto es el de 12! Parece que se produce overflow
 			}
 			else
 			{
@@ -97,8 +91,13 @@ int main()
 		case 6:
 			printf("Ejercicio 6: numero de bits\n");
 			//llamar a la funcion "numeroBits"
-			six : printf("Introduce un numero: ");
+			/*six : */printf("Introduce un numero: ");
 			scanf("%d", &x);
+			if (x<0)
+			{
+				printf("ERROR! Vuelva a comenzar. El numero debe de ser positivo.\n");
+				break;
+			}
 			z = numeroBits(x);
 			if (z != -1)
 			{
@@ -108,18 +107,21 @@ int main()
 			else
 			{
 				printf("Introduce un numero entero positivo.\n");
-				goto six;  //goto para permitir volver a elegir numero sin volver a elegir caso en el menu
+				//goto six;  //goto para permitir volver a elegir numero sin volver a elegir caso en el menu  do-while
+				// COMPROBAR EN TODOS LOS CASOS SI SE SOLUCIONA CON LA IMPLEMENTACION DEL IF(X<0)
 			}
 			
 
 		case 7:
 			printf("Ejercicio 7: cambiar bits\n");
 			// Llamar a la funci�n "cambiarBits"
-			seven : printf("Introduzca un numero entero positivo: \n");
+			/*seven : */printf("Introduzca un numero entero positivo: \n");
 			scanf("%d", &x);
 			if (x < 0)
 			{
-				goto seven;
+				//goto seven;
+				printf("Es necesario un numero entero positivo.\n");
+				break;
 			}
 			printf("Posicion a partir de la cual quiere invertir los bits. \n");
 			scanf("%d", &y);
@@ -133,12 +135,12 @@ int main()
 			else
 			{
 				printf("ERROR. Vuelva a comenzar.\n");
-				goto seven;  //goto para permitir volver a elegir numero sin volver a elegir caso en el menu
+				//goto seven;  //goto para permitir volver a elegir numero sin volver a elegir caso en el menu
 			}
 			break;
 
 		case 8:
-			printf("Ejercicio 8: intercambiar\n");
+			printf("Ejercicio 8: intercambiar\n"); //paso por referencia
 			// Llamar a la funci�n "intercambiar"
 			printf("Introduzca variable x: \n");
 			scanf("%lf", &numx);
@@ -152,14 +154,15 @@ int main()
 			printf("Ejercicio 9: media aritmetica\n");
 			// Llamar a la funci�n "mediaAritmetica"
 			printf("Introduzca el primer numero:\n");
-			scanf("%ld", &num1);
+			scanf("%lf", &num1);
 			printf("Introduzca el segundo numero:\n");
-			scanf("%ld", &num2);
+			scanf("%lf", &num2);
 			printf("Introduzca el tercer numero:\n");
-			scanf("%ld", &num3);
+			scanf("%lf", &num3);
 			printf("Introduzca el cuarto numero:\n");
-			scanf("%ld", &num4);
+			scanf("%lf", &num4);
 			res = mediaAritmetica(num1, num2, num3, num4);
+			printf("La media aritmetica de %g, %g, %g y %g es %g.\n",num1, num2, num3, num4, res);
 			break;
 
 		default:
@@ -218,7 +221,7 @@ int ParImpar(int n)//n va a ser igual a la variable x, que es con la que he indi
 	return resto;//la funcion devuelve el valor de resto, que gracias a y=ParImpar(x) se va a asignar a la variable y de la funcion main
 }
 
-void operacionesLogicasBits()
+void operacionesLogicasBits()   // Estudiar para examen el orden de operaciones logicas
 {
 	int a = 8, b = 0, c = 15, d = 93, e, r1, r2, r3, r4, r5, r6;
 	r1 = a && b || c && !d;//0
@@ -229,7 +232,7 @@ void operacionesLogicasBits()
 	a = 0x12; b = 0x56; c = 0x9a; d = 0x0f; e = 0360;
 	r1 = a & b | c;//154
 	r2 = c & 0177;//26
-	r3 = ~a | b ^ c;//-19??-->101
+	r3 = ~a | b ^ c;//-19??-->101 ~^|
 	r4 = e & c;//144
 	r5 = r4 & ~077;//128
 	r6 = (a & d) << 4 | (a & e) >> 4;//33
@@ -238,10 +241,10 @@ void operacionesLogicasBits()
 int ponerACeroBit(int n, int nPosBit)
 {
 	int resultado, mascara;
-	mascara  = 1 << (nPosBit -1);		//tiene que ser menos uno porque sino pondrias a cero el bit siguente
-	mascara = ~mascara;					//a la posicion que has elegido, es decir, si eliges poner a cero el tercer
-	resultado = n & mascara;			//bit, y desplazas el uno en la mascara tres posiciones a la derecha estas
-	return resultado;					//modificando el 4 bit //A NO SER QUE EL PRIMER BIT SEA 0 Y NO 1//
+	mascara  = 1 << (nPosBit);		
+	mascara = ~mascara;					
+	resultado = n & mascara;			
+	return resultado;					
 }
 
 long factorial(long n)
@@ -260,14 +263,6 @@ long factorial(long n)
 
 int numeroBits(int n) {
 	int exp=0;
-	/*for (exp = 1; exp < 1000; exp++)
-	{
-		if (((pow(2, exp - 1)) < n || n < (pow(2, exp))))
-		{
-			return exp;
-		}	
-	}
-	*/
 	if (n < 0) return -1;
 	else
 	{
@@ -280,18 +275,14 @@ int numeroBits(int n) {
 }
 
 int cambiarBit(int numero, int posInicial, int nBits) {
-	int respuesta, mascara = 0/*, a = posInicial*/;
+	int respuesta, mascara = 0;
 	if (posInicial < 0 || nBits <= 0 || nBits > posInicial)
 	{
 		return -1;
 	}
 	else
 	{	
-		/*for (a = posInicial; nBits; a--)
-		{
-			mascara = mascara | (1 << a);
-		}*/
-
+		
 		while (nBits != 0)
 		{
 			mascara = mascara | (1 << posInicial);
@@ -304,14 +295,20 @@ int cambiarBit(int numero, int posInicial, int nBits) {
 	}
 }
 
-double mediaAritmetica(double numero1, double numero2, double numero3, double numero4)
-{
-
-}
 
 intercambiar() {
-	double numz;
+	/*double numz;
 	numz = numx;
 	numx = numy;
 	numy = numz;
+	HAY QUE HACERLO MEDIANTE PASO DE REFERENCIAS, UTILIZANDO LA DIRECCION DE LA CELDA DE MEMORIA QUE ALMACENA EL VALOR
+	POR LO TANTO NO HAY QUE OPERAR CON VARIABLES GLOBALES, SINO CON LAS DIRECCIONES DE LAS VARIABLES LOCALES DECLARADAS EN EL MAIN
+	*/
 }
+double mediaAritmetica(double numero1, double numero2, double numero3, double numero4)
+{
+	double resultado;
+	resultado = ((numero1 + numero2 + numero3 + numero4) / 4);
+	return resultado;
+}
+

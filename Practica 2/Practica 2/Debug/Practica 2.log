@@ -1,11 +1,4 @@
 ﻿  Practica2.c
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(102): warning C4013: 'numeroBits' sin definir; se supone que extern devuelve como resultado int
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(147): warning C4013: 'intercambiar' sin definir; se supone que extern devuelve como resultado int
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(155): warning C4477: 'scanf' : la cadena de formato '%ld' requiere un argumento de tipo 'long *', pero el argumento variádico 1 tiene el tipo 'double *'
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(157): warning C4477: 'scanf' : la cadena de formato '%ld' requiere un argumento de tipo 'long *', pero el argumento variádico 1 tiene el tipo 'double *'
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(159): warning C4477: 'scanf' : la cadena de formato '%ld' requiere un argumento de tipo 'long *', pero el argumento variádico 1 tiene el tipo 'double *'
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(161): warning C4477: 'scanf' : la cadena de formato '%ld' requiere un argumento de tipo 'long *', pero el argumento variádico 1 tiene el tipo 'double *'
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(25): warning C4101: 'cambiados': variable local sin referencia
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(310): warning C4716: 'mediaAritmetica': debe devolver un valor
-c:\users\zarzu\source\repos\sistemas_informaticos\practica 2\practica2.c(317): warning C4716: 'intercambiar': debe devolver un valor
-  Practica 2.vcxproj -> C:\Users\zarzu\source\repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(27): warning C4101: 'cambiados': variable local sin referencia
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(307): warning C4716: 'intercambiar': debe devolver un valor
+  Practica 2.vcxproj -> C:\Users\Mario\Source\Repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
