@@ -15,7 +15,7 @@ int ponerACeroBit(int, int);
 long factorial(long);
 int numeroBits(int);
 int cambiarBit(int, int, int);
-int intercambiar();
+int intercambiar(double *, double *);
 double mediaAritmetica(double, double, double, double);
 
 int main()
@@ -309,6 +309,7 @@ intercambiar(double *num1, double *num2) {
 	*num1 = *num2;
 	*num2 = q;
 }
+
 double mediaAritmetica(double numero1, double numero2, double numero3, double numero4)
 {
 	double resultado;
