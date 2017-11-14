@@ -1,0 +1,7 @@
+﻿  Ejercicio 11.c
+c:\users\zarzu\source\repos\sistemas_informaticos\ejercicio 11\ejercicio 11\ejercicio 11.c(15): warning C4244: '=': conversión de 'double' a 'unsigned int'; posible pérdida de datos
+c:\users\zarzu\source\repos\sistemas_informaticos\ejercicio 11\ejercicio 11\ejercicio 11.c(16): warning C4244: '=': conversión de 'double' a 'short'; posible pérdida de datos
+c:\users\zarzu\source\repos\sistemas_informaticos\ejercicio 11\ejercicio 11\ejercicio 11.c(25): warning C4305: '=': truncamiento de 'int' a 'short'
+c:\users\zarzu\source\repos\sistemas_informaticos\ejercicio 11\ejercicio 11\ejercicio 11.c(33): warning C4244: '=': conversión de 'long' a 'float'; posible pérdida de datos
+c:\users\zarzu\source\repos\sistemas_informaticos\ejercicio 11\ejercicio 11\ejercicio 11.c(37): warning C4305: '=': truncamiento de 'double' a 'float'
+  Ejercicio 11.vcxproj -> C:\Users\zarzu\Source\Repos\sistemas_informaticos\Ejercicio 11\Debug\Ejercicio 11.exe
