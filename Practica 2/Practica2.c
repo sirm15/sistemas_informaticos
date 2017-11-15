@@ -109,6 +109,7 @@ int main()
 				printf("Introduce un numero entero positivo.\n");
 				//goto six;  //goto para permitir volver a elegir numero sin volver a elegir caso en el menu  do-while
 				// COMPROBAR EN TODOS LOS CASOS SI SE SOLUCIONA CON LA IMPLEMENTACION DEL IF(X<0)
+				break;
 			}
 			
 
