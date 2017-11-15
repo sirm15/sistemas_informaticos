@@ -15,7 +15,7 @@ int ponerACeroBit(int, int);
 long factorial(long);
 int numeroBits(int);
 int cambiarBit(int, int, int);
-int intercambiar(double *, double *);
+void intercambiar(double *, double *);
 double mediaAritmetica(double, double, double, double);
 
 int main()
@@ -233,7 +233,7 @@ void operacionesLogicasBits()   // Estudiar para examen el orden de operaciones 
 	a = 0x12; b = 0x56; c = 0x9a; d = 0x0f; e = 0360;
 	r1 = a & b | c;//154
 	r2 = c & 0177;//26
-	r3 = ~a | b ^ c;//-19??-->101 ~^|
+	r3 = ~a | b ^ c;//-19??-->101 ~^| --> revisar orden de operaciones
 	r4 = e & c;//144
 	r5 = r4 & ~077;//128
 	r6 = (a & d) << 4 | (a & e) >> 4;//33
@@ -297,7 +297,7 @@ int cambiarBit(int numero, int posInicial, int nBits) {
 }
 
 
-intercambiar(double *num1, double *num2) {
+void intercambiar(double *num1, double *num2) {
 	/*double numz;
 	numz = numx;
 	numx = numy;

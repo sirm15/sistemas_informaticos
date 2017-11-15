@@ -1,0 +1,3 @@
+﻿  Ejercicio10.c
+c:\users\zarzu\source\repos\sistemas_informaticos\ejercicio10\ejercicio10\ejercicio10.c(10): warning C4047: '=': 'char' es distinto en los niveles de direccionamiento indirecto de 'char [2]'
+  Ejercicio10.vcxproj -> C:\Users\zarzu\Source\Repos\sistemas_informaticos\Ejercicio10\Debug\Ejercicio10.exe
