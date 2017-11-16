@@ -1,1 +1,4 @@
-﻿  Practica 2.vcxproj -> C:\Users\zarzu\source\repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
+﻿  Practica2.c
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(27): warning C4101: 'cambiados': variable local sin referencia
+c:\users\mario\source\repos\sistemas_informaticos\practica 2\practica2.c(312): warning C4716: 'intercambiar': debe devolver un valor
+  Practica 2.vcxproj -> C:\Users\Mario\Source\Repos\sistemas_informaticos\Practica 2\Practica 2\Debug\Practica 2.exe
