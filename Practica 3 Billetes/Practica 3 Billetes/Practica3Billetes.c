@@ -38,47 +38,59 @@ void cuenta_billetes_monedas(int euros, int billetes[], int numbilletes[])
 
 	for (i = 0; i < 7; i++)
 	{
-		if (numbilletes[i] == 1)
+		if (numbilletes[i] == 0)
 		{
-			printf(" %d billete de %d euros. ", numbilletes[i], billetes[i]);
-			printf("\n\n");
 		}
 		else
 		{
-			printf(" %d billetes de %d euros. ", numbilletes[i], billetes[i]);
-			printf("\n\n");
+			if (numbilletes[i] == 1)
+			{
+				printf(" %d billete de %d euros. ", numbilletes[i], billetes[i]);
+				printf("\n\n");
+			}
+			else
+			{
+				printf(" %d billetes de %d euros. ", numbilletes[i], billetes[i]);
+				printf("\n\n");
+			}
 		}
-
 	}
 	printf("\n**** NUMERO DE MONEDAS ******\n\n");
 
 	for (i = 7; i < 8; i++)
 	{
-		if (numbilletes[i] == 1)
+		if (numbilletes[i] == 0)
 		{
-			printf(" %d moneda de %d euros. ", numbilletes[i], billetes[i]);
-			printf("\n\n");
 		}
-		else
-		{
-			printf(" %d monedas de %d euros. ", numbilletes[i], billetes[i]);
-			printf("\n\n");
+		else {
+			if (numbilletes[i] == 1)
+			{
+				printf(" %d moneda de %d euros. ", numbilletes[i], billetes[i]);
+				printf("\n\n");
+			}
+			else
+			{
+				printf(" %d monedas de %d euros. ", numbilletes[i], billetes[i]);
+				printf("\n\n");
+			}
 		}
-		
 	}
 	for (i = 8; i < 9; i++)
 	{
-		if (numbilletes[i] == 1)
+		if (numbilletes[i] == 0)
 		{
-			printf(" %d moneda de %d euro. ", numbilletes[i], billetes[i]);
-			printf("\n\n");
 		}
-		else
-		{
-			printf(" %d monedas de %d euro. ", numbilletes[i], billetes[i]);
-			printf("\n\n");
+		else {
+			if (numbilletes[i] == 1)
+			{
+				printf(" %d moneda de %d euro. ", numbilletes[i], billetes[i]);
+				printf("\n\n");
+			}
+			else
+			{
+				printf(" %d monedas de %d euro. ", numbilletes[i], billetes[i]);
+				printf("\n\n");
+			}
 		}
-
 	}
 }
-//añadir forma de que no imprima los valores de los billetes que son 0
