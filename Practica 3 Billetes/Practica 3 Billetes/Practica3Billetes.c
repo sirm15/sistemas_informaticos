@@ -5,7 +5,7 @@ void cuenta_billetes_monedas(int, int[], int[]); //int cantidad, int array valor
 int main()
 {
 	int valor[9] = { 500, 200, 100, 50, 20, 10, 5, 2, 1 };
-	int numero[9];
+	int numero[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 	int cantidad;
 	printf("Practica 3, ejercicio 2\n");
 	printf("Introduce una cantidad de euros (sin centimos): ");
@@ -24,21 +24,61 @@ int main()
 
 void cuenta_billetes_monedas(int euros, int billetes[], int numbilletes[])
 {
-	int i = 0;
+	int i = -1;
 	while (euros > 0)
 	{
+		i++;
 		numbilletes[i] = euros / billetes[i];
 		euros = euros %  billetes[i];
 	}
 
 	//imprimir array
 
-	printf("\n**** LISTADO DE LOS NUMEROS LEIDOS ******\n\n");
+	printf("\n**** NUMERO DE BILLETES ******\n\n");
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 7; i++)
 	{
-		printf(" %d, ", numbilletes[i]);
-		printf("\n\n");
+		if (numbilletes[i] == 1)
+		{
+			printf(" %d billete de %d euros. ", numbilletes[i], billetes[i]);
+			printf("\n\n");
+		}
+		else
+		{
+			printf(" %d billetes de %d euros. ", numbilletes[i], billetes[i]);
+			printf("\n\n");
+		}
+
 	}
-	//se queda en bucle, revisar impresion y DEPURAR	
+	printf("\n**** NUMERO DE MONEDAS ******\n\n");
+
+	for (i = 7; i < 8; i++)
+	{
+		if (numbilletes[i] == 1)
+		{
+			printf(" %d moneda de %d euros. ", numbilletes[i], billetes[i]);
+			printf("\n\n");
+		}
+		else
+		{
+			printf(" %d monedas de %d euros. ", numbilletes[i], billetes[i]);
+			printf("\n\n");
+		}
+		
+	}
+	for (i = 8; i < 9; i++)
+	{
+		if (numbilletes[i] == 1)
+		{
+			printf(" %d moneda de %d euro. ", numbilletes[i], billetes[i]);
+			printf("\n\n");
+		}
+		else
+		{
+			printf(" %d monedas de %d euro. ", numbilletes[i], billetes[i]);
+			printf("\n\n");
+		}
+
+	}
 }
+//añadir forma de que no imprima los valores de los billetes que son 0
